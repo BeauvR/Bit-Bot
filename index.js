@@ -30,7 +30,10 @@ client.on('ready', () => {
 
 // On every message send
 client.on('message', message => {
-	if (!message.content.startsWith(config.prefix) || message.author.bot) return;
+	if (message.author.bot)return;
+	if (!message.content.startsWith(config.prefix)) {
+		return randomReaction(message);
+	}
 
 	const args = message.content.slice(config.prefix.length).split(/ +/);
 	const commandName = args.shift().toLowerCase();
@@ -82,5 +85,21 @@ client.on('message', message => {
 	}
 	
 });
+
+function randomReaction(message){
+	console.log(message.content.split(" "))
+	var obj = {
+		'lol': "Hahahaha so funny, not",
+		'shit': "I'm not shit",
+		'rip': "Rust in pease",
+	}
+	var array = message.content.split(" ")
+	array.forEach(element => {
+		if(obj[element.toLowerCase()]){
+			message.reply(obj[element.toLowerCase()]);
+			break;
+		}
+	});
+}
 // Logs in on the bot
 client.login(config.token);
