@@ -22,3 +22,5 @@ module.exports = {
         channel.send(EmbedMessage);
     }
 }
+
+// https://stackoverflow.com/questions/39882842/how-to-break-out-from-foreach-loop-in-javascript/39882902
