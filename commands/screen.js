@@ -8,9 +8,9 @@ module.exports = {
 	execute(message) {
     let voicechannel = message.member.voiceChannelID
     if (voicechannel) {
-      message.reply("You can use the link below to share the screen \n https://discordapp.com/channels/" + message.guild.id + "/" + voicechannel)
+        message.reply("You can use the link below to share the screen \n https://discordapp.com/channels/" + message.guild.id + "/" + voicechannel)
     } else {
-      message.reply("To use this command you need to be in a voicechannel in the " + message.guild.name + " discord")
+        message.reply("To use this command you need to be in a voicechannel in the " + message.guild.name + " discord")
     }
   }
 }
